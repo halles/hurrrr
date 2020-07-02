@@ -112,6 +112,9 @@ docker-compose exec drupal mv themes/contrib/my_custom_theme themes/custom/my_cu
 docker-compose exec drupal drush en my_custom_theme -y
 ```
 
+In order to avoid confusion, you can remove this section from this README.md
+once you have created your theme.
+
 ### Adding custom module code
 
 Create custom modules in `modules/custom` and they will automatically be

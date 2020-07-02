@@ -80,6 +80,18 @@ web browser:
 - http://localhost:8080/ (Drupal in the `drupal` container)
 - http://localhost:3001/ (Browsersync in the `frontend` container)
 
+### Adding Zurb Foundation
+
+If you want to add the theme Zurb Foundation Theme run this. In order to
+
+```
+COMPOSER_MEMORY_LIMIT=-1 composer require "drupal/zurb_foundation:^6.0"
+```
+
+#### Create a child theme from Zurb's foundation
+
+@ToDo add instructions
+
 ### Adding custom module code
 
 Create custom modules in `modules/custom` and they will automatically be

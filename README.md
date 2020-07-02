@@ -2,6 +2,15 @@
 
 Drupal Website
 
+## Initialising your project
+
+1. Copy the files of this repository
+2. Customise the project information in `composer.json`
+3. Run `composer update` in order to create your first composer.lock
+4. You can add new dependencies at this stage before continuing if you already
+   know you will use them
+5. Remove this section of the file
+
 ## Website Development
 
 We assume the following development style (using the docker terminology to refer

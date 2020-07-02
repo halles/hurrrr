@@ -24,6 +24,9 @@
     },
     "require-dev": {
         "behat/mink-goutte-driver": "^1.2",
+        "drupal/admin_toolbar": "^2.3",
+        "drupal/mailsystem": "^4.3",
+        "drupal/phpmailer_smtp": "^1.5",
         "phpunit/phpunit": "^7",
         "symfony/phpunit-bridge": "^5.0"
     },

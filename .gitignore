@@ -1,0 +1,46 @@
+# Generic files
+
+/.idea
+/.vscode
+
+# Dependencies
+
+/vendor/
+/node_modules/
+/core/
+/themes/README.txt
+/themes/contrib/
+/modules/README.txt
+/modules/contrib/
+
+# System
+/autoload.php
+/index.php
+
+# Drupal Specific
+/.ht.router.php
+/.htaccess
+/robots.txt
+/autoload.php
+/update.php
+/web.config
+/INSTALL.txt
+/README.txt
+/profiles/README.txt
+
+# Ignore files that are not required
+/sites/README.txt
+/sites/example.settings.local.php
+/sites/example.sites.php
+/sites/*/example*.php
+
+# Ignore default setting files
+/sites/*/default.*.*
+
+# Ignore paths that contain user-generated content.
+/sites/*/files
+/sites/*/private
+
+# Ignore SimpleTest multi-site environment.
+/sites/simpletest
+/example.gitignore

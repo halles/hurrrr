@@ -85,12 +85,23 @@ web browser:
 If you want to add the theme Zurb Foundation Theme run this. In order to
 
 ```
-COMPOSER_MEMORY_LIMIT=-1 composer require "drupal/zurb_foundation:^6.0"
+docker-compose exec drupal composer require "drupal/zurb_foundation:^6.0"
+docker-compose exec drupal drush en zurb_foundation -y
 ```
 
 #### Create a child theme from Zurb's foundation
 
-@ToDo add instructions
+Based on
+[these instruction](https://www.drupal.org/docs/8/themes/zurb-foundation-user-guide/zurb-foundation-8x-6x/creating-a-custom-foundation-subtheme#s-create-a-subtheme-using-drush)
+, you can run these commands to create a child theme.
+
+Replace `my_custom_theme` with the desired machine name for your theme:
+
+```
+docker-compose exec drupal drush fst my_custom_theme -n
+docker-compose exec drupal mv themes/contrib/my_custom_theme themes/custom/my_custom_theme
+docker-compose exec drupal drush en my_custom_theme -y
+```
 
 ### Adding custom module code
 

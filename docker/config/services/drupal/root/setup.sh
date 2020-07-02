@@ -49,6 +49,10 @@ drush config:set --yes mailsystem.settings defaults.formatter phpmailer_smtp
 drush config:set --yes phpmailer_smtp.settings smtp_host mailhog
 drush config:set --yes phpmailer_smtp.settings smtp_port 1025
 
+# Enables Zurb Foundation and my_custom_theme
+# drush en zurb_foundation -y
+# drush en my_custom_theme -y
+
 # Tell Drupal to load /var/www/html/sites/default/settings.local.php if it
 # exists by appending the appropriate snippet to the main settings.php file
 cat >> /var/www/html/sites/default/settings.php << 'END'

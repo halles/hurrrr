@@ -1,7 +1,7 @@
 ##
 # https://docs.docker.com/compose/compose-file/
 #
-version: "3.7"
+version: '3.7'
 
 services:
   ##
@@ -24,10 +24,10 @@ services:
     #
     #   so we try to match that as closely as we can.
     #
-    image: "mariadb:10"
+    image: 'mariadb:10'
     ports:
       # host:container
-      - "3306:3306"
+      - '3306:3306'
     environment:
       MYSQL_ROOT_PASSWORD: drupal
       MYSQL_DATABASE: drupal
@@ -38,7 +38,7 @@ services:
       # because a volume with a sensible name is easier to manage and
       # clean up later on.
       #
-      - "mysql_data:/var/lib/mysql"
+      - 'mysql_data:/var/lib/mysql'
 
       ##
       # * The MySQL container will execute files with extensions .sh,
@@ -58,14 +58,14 @@ services:
       dockerfile: docker/Dockerfile.dev.drupal
     ports:
       # host:container
-      - "8080:80"
+      - '8080:80'
     depends_on:
       - mysql
     environment:
       ##
       # Give composer all the memory we have to stop it dying annoyingly sometimes
       #
-      COMPOSER_MEMORY_LIMIT: "-1"
+      COMPOSER_MEMORY_LIMIT: '-1'
 
       ##
       # These are the credentials for the Drupal admin user which
@@ -95,17 +95,15 @@ services:
       - ./phpunit.xml:/var/www/html/phpunit.xml
 
       - ./modules/custom:/var/www/html/modules/custom
-      - ./profiles:/var/www/html/profiles
-
-      - ./themes/contrib:/var/www/html/themes/contrib
       - ./themes/custom:/var/www/html/themes/custom
+      - ./profiles:/var/www/html/profiles
 
       - ./sites/default/settings.local.php:/var/www/html/sites/default/settings.local.php
 
-      - ./config/services/drupal/root/install-drupal.sh:/root/install-drupal.sh
-      - ./config/services/drupal/root/run-ci.sh:/root/run-ci.sh
+      - ./docker/config/services/drupal/root/setup.sh:/root/setup.sh
+      - ./docker/config/services/drupal/root/run-ci.sh:/root/run-ci.sh
 
-      - ./config/services/drupal/etc/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/config/services/drupal/etc/nginx/nginx.conf:/etc/nginx/nginx.conf
   ##
   # The 'frontend' container runs all our JS/CSS/image pipelines
   #

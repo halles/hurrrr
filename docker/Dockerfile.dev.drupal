@@ -29,7 +29,9 @@ RUN curl -sS https://getcomposer.org/installer | php && \
     ln -s /root/.composer/vendor/bin/drush /usr/local/bin/drush
 
 # Install Drush
-RUN composer global require drush/drush && \
+# Lock drush version as it is throwing errors
+# Fatal error: Uncaught TypeError: Argument 2 passed to Symfony\Component\EventDispatcher\EventDispatcher::dispatch() must be an instance of Symfony\Component\EventDispatcher\Event or null, string given, called in /root/.composer/vendor/consolidation/annotated-command/src/Hooks/Dispatchers/CommandEventHookDispatcher.php on line 30 and defined in /var/www/html/vendor/symfony/event-dispatcher/EventDispatcher.php:37
+RUN composer global require drush/drush:8.3.4 && \
     composer global update
 
 # # Install PHP extension: gd (PHP 7.4 version)

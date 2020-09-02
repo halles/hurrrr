@@ -155,6 +155,19 @@ The default credentials (set by env vars in `docker-compose.yml`) are:
 
 When running composer in your local machine, composer may run out of memory
 
+### Docker Build Takes too Long
+
+You will want to use composer caching between builds.
+
+```
+# syntax = docker/dockerfile:1.0-experimental
+
+RUN --mount=type=cache,target=/var/composer \
+
+export COMPOSE_DOCKER_CLI_BUILD=1
+export DOCKER_BUILDKIT=1
+```
+
 ### Documentation
 
 - Drupal API Reference https://api.drupal.org/api/drupal

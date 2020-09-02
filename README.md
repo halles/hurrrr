@@ -151,6 +151,10 @@ The default credentials (set by env vars in `docker-compose.yml`) are:
     Username: admin
     Password: admin
 
+### Composer Install complains about Memory
+
+When running composer in your local machine, composer may run out of memory
+
 ### Documentation
 
 - Drupal API Reference https://api.drupal.org/api/drupal
